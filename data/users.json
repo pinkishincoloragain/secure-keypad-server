@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "userId": 1,
+      "password": "1234a",
+      "name": "정대규",
+      "bankName": "국민",
+      "bankAccount": "123456789012",
+      "phoneNumber": "010-1529-1582"
+    },
+    {
+      "userId": 2,
+      "password": "5678b",
+      "name": "김동규",
+      "bankName": "신한",
+      "bankAccount": "234567890123",
+      "phoneNumber": "010-1234-5678"
+    },
+    {
+      "userId": 3,
+      "password": "9012c",
+      "name": "손명빈",
+      "bankName": "하나",
+      "bankAccount": "345678901234",
+      "phoneNumber": "010-9876-5432"
+    },
+    {
+      "userId": 4,
+      "password": "3456d",
+      "name": "고재철",
+      "bankName": "카카오",
+      "bankAccount": "456789012345",
+      "phoneNumber": "010-1111-2222"
+    },
+    {
+      "userId": 5,
+      "password": "7890e",
+      "name": "이영희",
+      "bankName": "토스",
+      "bankAccount": "567890123456",
+      "phoneNumber": "010-2222-3333"
+    },
+    {
+      "userId": 6,
+      "password": "2345f",
+      "name": "홍길동",
+      "bankName": "농협",
+      "bankAccount": "678901234567",
+      "phoneNumber": "010-3333-4444"
+    },
+    {
+      "userId": 7,
+      "password": "6789g",
+      "name": "박철수",
+      "bankName": "국민",
+      "bankAccount": "789012345678",
+      "phoneNumber": "010-4444-5555"
+    },
+    {
+      "userId": 8,
+      "password": "0123h",
+      "name": "김영수",
+      "bankName": "신한",
+      "bankAccount": "890123456789",
+      "phoneNumber": "010-5555-6666"
+    },
+    {
+      "userId": 9,
+      "password": "4567i",
+      "name": "이미나",
+      "bankName": "하나",
+      "bankAccount": "901234567890",
+      "phoneNumber": "010-6666-7777"
+    },
+    {
+      "userId": 10,
+      "password": "8901j",
+      "name": "장승민",
+      "bankName": "카카오",
+      "bankAccount": "012345678901",
+      "phoneNumber": "010-7777-8888"
+    },
+    {
+      "userId": 11,
+      "password": "2345k",
+      "name": "김지영",
+      "bankName": "토스",
+      "bankAccount": "123456789012",
+      "phoneNumber": "010-8888-9999"
+    },
+    {
+      "userId": 12,
+      "password": "6789l",
+      "name": "윤진호",
+      "bankName": "농협",
+      "bankAccount": "234567890123",
+      "phoneNumber": "010-9999-0000"
+    },
+    {
+      "userId": 13,
+      "password": "0123m",
+      "name": "이상민",
+      "bankName": "국민",
+      "bankAccount": "345678901234",
+      "phoneNumber": "010-0000-1111"
+    },
+    {
+      "userId": 14,
+      "password": "4567n",
+      "name": "김현우",
+      "bankName": "신한",
+      "bankAccount": "456789012345",
+      "phoneNumber": "010-1111-2222"
+    },
+    {
+      "userId": 15,
+      "password": "8901o",
+      "name": "박은정",
+      "bankName": "하나",
+      "bankAccount": "567890123456",
+      "phoneNumber": "010-2222-3333"
+    }
+  ]
+}
