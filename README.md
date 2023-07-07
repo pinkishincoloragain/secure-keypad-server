@@ -16,12 +16,22 @@ Start
 $ yarn start
 ```
 
-## API
+## ALL USERS
 
 ### Request
 
+#### Authentication Header
+```text
+Authentication: Bearer secret
+```
+
+#### Request
 ```HTTP
 GET /api/users
+```
+
+```HTTP
+GET /slow-api/users
 ```
 
 ### Response
@@ -43,17 +53,20 @@ GET /api/users
     "bankName": "신한",
     "bankAccount": "234567890123",
     "phoneNumber": "010-1234-5678"
-  },
-  ...
+  }
 ]
 ```
 
-## User
+## SINGLE User
 
 ### Request
 
 ```HTTP
 GET /api/users/:id
+```
+
+```HTTP
+GET /slow-api/user/:id
 ```
 
 ### Response
@@ -82,7 +95,7 @@ export type BankAccount = string;
 export type PhoneNumber = string;
 
 export interface User {
-    id: UserId;
+    userId: UserId;
     password: Password;
     name: Name;
     bankName: BankName;
