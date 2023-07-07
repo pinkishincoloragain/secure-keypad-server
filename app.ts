@@ -30,14 +30,13 @@ app.use((req: Request, res: Response, next) => {
     next();
 });
 
-// Route handler for '/api/users'
-app.get('/api/users', verifyToken, (req: Request, res: Response) => {
+function serveUsers(res: Response) {
     const date = new Date();
     console.log(date.toLocaleTimeString() + ' - GET /api/users');
     res.json(users);
-});
+}
 
-app.get('/api/user/:id', verifyToken, (req: Request, res: Response) => {
+function serveSpecificUser(req: Request, res: Response) {
     const id = +req.params.id;
     const user = users.find(user => user.userId === id);
     if (user) {
@@ -47,6 +46,30 @@ app.get('/api/user/:id', verifyToken, (req: Request, res: Response) => {
     } else {
         res.status(404).json({error: `User ${id} not found`});
     }
+}
+
+// Route handler for '/api/users'
+app.get('/api/users', verifyToken, (req: Request, res: Response) => {
+    serveUsers(res);
+});
+
+app.get('/api/user/:id', verifyToken, (req: Request, res: Response) => {
+    serveSpecificUser(req, res);
+});
+
+// Route handler for '/api/users'
+app.get('/slow-api/users', verifyToken, (req: Request, res: Response) => {
+    setTimeout(() => {
+            serveUsers(res);
+        }, 5000
+    );
+});
+
+app.get('/slow-api/user/:id', verifyToken, (req: Request, res: Response) => {
+    setTimeout(() => {
+            serveSpecificUser(req, res);
+        }, 5000
+    );
 });
 
 // Start the server
