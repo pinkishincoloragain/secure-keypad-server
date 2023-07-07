@@ -1,18 +1,41 @@
 import express, {Request, Response} from 'express';
 import mockData from './data/users.json';
+import cors from "cors";
 
-// Mock user data
+
+const app = express();
+app.use(cors());
+app.use(express.json());
 const users = mockData.data;
 
-// Create Express app
-const app = express();
+const port = 8080;
+
+function verifyToken(req: Request, res: Response, next: any) {
+    const bearerHeader = req.headers['authorization'];
+    if (typeof bearerHeader !== 'undefined') {
+        const bearerToken = bearerHeader.split(' ')[1];
+        if (bearerToken === 'secret') {
+            next();
+        } else {
+            res.sendStatus(403);
+        }
+    } else {
+        res.sendStatus(403);
+    }
+}
+
+// CORS
+app.use((req: Request, res: Response, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 // Route handler for '/api/users'
-app.get('/api/users', (req: Request, res: Response) => {
+app.get('/api/users', verifyToken, (req: Request, res: Response) => {
     res.json(users);
 });
 
-app.get('/api/user/:id', (req: Request, res: Response) => {
+app.get('/api/user/:id', verifyToken, (req: Request, res: Response) => {
     const id = +req.params.id;
     const user = users.find(user => user.userId === id);
     if (user) {
@@ -23,7 +46,6 @@ app.get('/api/user/:id', (req: Request, res: Response) => {
 });
 
 // Start the server
-const port = 8080;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
